@@ -38,7 +38,7 @@ python query.py
 ```
 To have the agent report latest configuration and revise specific parameters as in demo3, run the following commands on PC3. 
 ```
-cd rag_experiments
+cd LTE_experiments
 python user_revision.py
 ```
 ## Citation
