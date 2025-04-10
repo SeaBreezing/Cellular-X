@@ -24,7 +24,7 @@ python save_to_index.py
 ## Getting Started
 To automatically build a cellular network as in demo1, run the following commands on PC3. 
 ```
-cd LTE_experiment
+cd LTE_experiments
 python build_LTE.py
 ```
 To acquire an allowable parameter for BS as in demo2, run the following commands on PC3. 
