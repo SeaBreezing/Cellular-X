@@ -28,7 +28,7 @@ Ettus Knowledge Base: https://kb.ettus.com/
 1. Connect the USRP device to the Ethernet port of the host using a network cable and ensure that the device is supplied with external power (N210/X310 requires a separate power adapter)
 2. Assign a static IP address to the Ethernet interface of the host on the same subnet as the USRP. For example, the ip address of the Ethernet interface on the host is 192.168.40.2. Use Manual, cancel DHCP, and set the Netmask to 255.255.0.0. Set the ip address of the network adapter connecting to the USRP to 192.168.40.xxx (the ip address cannot be the same).
 
-[![](https://i.ytimg.com/vi/sSCRLyY355c/maxresdefault.jpg)]
+[![](https://github.com/SeaBreezing/Cellular-X/blob/main/IMG/ip_set.png)]
 
 ​	By the way, you can use this command to find the IP of the USRP.
 
