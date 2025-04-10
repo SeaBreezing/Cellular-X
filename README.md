@@ -17,17 +17,17 @@ python save_to_index.py
 ```
 
 ## Getting Started
-To automatically build a cellular network as demo1, run the following commands on PC3. 
+To automatically build a cellular network as in demo1, run the following commands on PC3. 
 ```
 cd LTE_experiment
 python build_LTE.py
 ```
-To acquire an allowable parameter for BS as demo2, run the following commands on PC3. 
+To acquire an allowable parameter for BS as in demo2, run the following commands on PC3. 
 ```
 cd rag_experiments
 python query.py
 ```
-To have the agent report latest configuration and revise specific parameters as demo3, run the following commands on PC3. 
+To have the agent report latest configuration and revise specific parameters as in demo3, run the following commands on PC3. 
 ```
 cd rag_experiments
 python user_revision.py
