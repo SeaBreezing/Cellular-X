@@ -30,7 +30,7 @@ Ettus Knowledge Base: https://kb.ettus.com/
 
 ![](https://github.com/SeaBreezing/Cellular-X/blob/main/IMG/ip_set.png)
 
-​	By the way, you can use this command to find the IP of the USRP.
+​	You can use this command to find the IP of the USRP.
 
 ```bash
 ifconfig
