@@ -1,0 +1,34 @@
+Some eNB configuration parameters you may refer to are as follows. 
+'''
+# eNB configuration
+
+enb_id:               20-bit eNB identifier.
+mcc:                  Mobile Country Code
+mnc:                  Mobile Network Code
+mme_addr:             IP address of MME for S1 connnection
+gtp_bind_addr:        Local IP address to bind for GTP connection
+gtp_advertise_addr:   IP address of eNB to advertise for DL GTP-U Traffic
+s1c_bind_addr:        Local IP address to bind for S1AP connection
+s1c_bind_port:        Source port for S1AP connection (0 means any)
+n_prb:                Number of Physical Resource Blocks (6,15,25,50,75,100)
+tm:                   Transmission mode 1-4 (TM1 default)
+nof_ports:            Number of Tx ports (1 port default, set to 2 for TM2/3/4)
+
+#####################################################################
+# RF configuration
+
+dl_earfcn: EARFCN code for DL (only valid if a single cell is configured in rr.conf)
+tx_gain: Transmit gain (dB).
+rx_gain: Optional receive gain (dB). If disabled, AGC if enabled
+
+Optional parameters:
+dl_freq:            Override DL frequency corresponding to dl_earfcn
+ul_freq:            Override UL frequency corresponding to dl_earfcn (must be set if dl_freq is set)
+device_name:        Device driver family. Supported options: "auto" (uses first driver found), "UHD", "bladeRF", "soapy", "zmq" or "Sidekiq"
+device_args:        Arguments for the device driver. Options are "auto" or any string.
+                    Default for UHD: "recv_frame_size=9232,send_frame_size=9232"
+                    Default for bladeRF: ""
+time_adv_nsamples:  Transmission time advance (in number of samples) to compensate for RF delay
+                    from antenna to timestamp insertion.
+                   Default "auto". B210 USRP: 100 samples, bladeRF: 27
+'''

@@ -1,0 +1,8 @@
+The system configuration is as follows:
+1. There are two USRP X310 devices which act as EPC/ENB and UE respectively.
+2. The address of the machines acting as EPC/ENB is 192.168.110.2.
+3. The address of the macine acting as UE is 192.168.40.2.
+4. The UHD version is 3.15.0.
+5. The FPGA image version in USRP is 36.0.
+6. The experiment is conducted in Hong Kong.
+7. The generated configurations will be put to /root/.config/srsran directory. Warnings about the configuration location can be ignored.

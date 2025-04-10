@@ -30,7 +30,7 @@ python query.py
 To have the agent report latest configuration and revise specific parameters as demo3, run the following commands on PC3. 
 ```
 cd rag_experiments
-python query.py
+python user_revision.py
 ```
 ## Citation
 If this repository is useful for your research, please cite:

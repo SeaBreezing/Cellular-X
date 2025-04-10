@@ -1,0 +1,8 @@
+Only output the epc configuration file and the enb configuration file in json format. Detailed requirements are:
+1. Minimize the configuration as long as it builds up the LTE network properly. Minimize the number of optional items in the generated configuration.
+2. The output format should be like the example below. Make sure the response can be directly extracted by json.loads().
+example:
+```
+{"epc.conf", "EPC_CONFIGURATIONS_IN_PLAIN_TEXT", "enb.conf", "ENB_CONFIGURATIONS_IN_PLAIN_TEXT"}
+```
+3. Do not add any other comments or explanations.
