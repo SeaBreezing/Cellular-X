@@ -11,7 +11,7 @@
 * To check your environment, run `srsran`, `srsenb` on PC1 and `srsue` on PC2. You will see `Network attach successful` on PC2 as output if your settings are correct.
 * Run the following commands to prepare for demo2.
   ```
-  pip install llama-index`
+  pip install llama-index
   pip install openai-whisper
   ```
 ## Data preparation
