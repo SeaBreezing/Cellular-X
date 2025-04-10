@@ -19,7 +19,7 @@
   pip install openai-whisper
   ```
 ## Data preparation
-For demo2, run the following commands to obtain [LlamaIndex](https://github.com/run-llama/llama_index)-parsed chunks from [TSpec-LLM](https://huggingface.co/datasets/rasoul-nikbakht/TSpec-LLM). Change `W` in `save_to_index.py` for different chunk size. Parsed results are saved in `rag_experiment/3GPP-index_1024` and `rag_experiment/3GPP-index_2048`.
+For demo2, run the following commands to obtain [LlamaIndex](https://github.com/run-llama/llama_index)-parsed chunks from [TSpec-LLM](https://huggingface.co/datasets/rasoul-nikbakht/TSpec-LLM). Change `W` in `save_to_index.py` for different chunk size. Parsed results are saved in `rag_experiment/3GPP-index_W`.
 ```
 cd rag_experiments
 python save_to_index.py
