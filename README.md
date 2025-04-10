@@ -10,7 +10,7 @@
 * Follow [SRSRAN 4G Installation Guide](https://docs.srsran.com/projects/4g/en/latest/general/source/1_installation.html#gen-installation) to prepare your SRSRAN environment on PC1 and PC2.
 * To check your environment, run `srsran`, `srsenb` on PC1 and `srsue` on PC2. You will see `Network attach successful` on PC2 as output if your settings are correct.
 ## Data preparation
-* For demo2, run
+For demo2, run
 ```
 cd rag_experiments
 python save_to_index.py
