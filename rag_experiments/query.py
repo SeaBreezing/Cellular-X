@@ -47,6 +47,7 @@ def query(question_idx: int, question_prompt: str, model) -> str:
     prompt = "Answer the question for the question below:\n"
     prompt += question_prompt+'\n'
     rag_results = query_index(prompt, K)
+    # RAG 
     prompt += "You are provided with related document information as follows:\n"
     for i, result in enumerate(rag_results):
         prompt += f"Information {i+1}: "+result.text+"\n"
