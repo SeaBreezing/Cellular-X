@@ -15,7 +15,7 @@ For demo2, run
 cd rag_experiments
 python save_to_index.py
 ```
-to obtain [Llama-Index](https://github.com/run-llama/llama_index) parsed chunking from from [TSpec-LLM](https://huggingface.co/datasets/rasoul-nikbakht/TSpec-LLM). Parsed results are saved in `rag_experiment/3GPP-index_1024` and `rag_experiment/3GPP-index_2048`.
+to obtain [Llama-Index](https://github.com/run-llama/llama_index)-parsed chunks from [TSpec-LLM](https://huggingface.co/datasets/rasoul-nikbakht/TSpec-LLM). Parsed results are saved in `rag_experiment/3GPP-index_1024` and `rag_experiment/3GPP-index_2048`.
 ## Getting Stared
 To automatically build a cellular network as demo1, run the following commands on PC3. 
 ```
