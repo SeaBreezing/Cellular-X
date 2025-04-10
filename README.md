@@ -10,7 +10,7 @@
 * Follow [SRSRAN 4G Installation Guide](https://docs.srsran.com/projects/4g/en/latest/general/source/1_installation.html#gen-installation) to prepare your SRSRAN environment on PC1 and PC2.
 * To check your environment, run `srsran`, `srsenb` on PC1 and `srsue` on PC2. You will see `Network attach successful` on PC2 as output if your settings are correct.
 ## Data preparation
-* For demo2, our data `rag_experiment/3GPP-index_1024` and `rag_experiment/3GPP-index_2048` is parsed from [TSpec-LLM](https://huggingface.co/datasets/rasoul-nikbakht/TSpec-LLM) using Llama-Index. Run `` to obtain https://drive.google.com/drive/folders/1L4RViGt8FgEDlcxg6hyBei-tg03gPBKf?usp=drive_link
+* For demo2, our data `rag_experiment/3GPP-index_1024` and `rag_experiment/3GPP-index_2048` is parsed from [TSpec-LLM](https://huggingface.co/datasets/rasoul-nikbakht/TSpec-LLM) using [Llama-Index](https://github.com/run-llama/llama_index).
 ## Getting Stared
 To automatically build a cellular network as demo1, run the following commands on PC3. 
 ```
