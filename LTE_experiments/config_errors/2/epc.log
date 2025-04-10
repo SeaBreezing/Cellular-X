@@ -1,0 +1,15 @@
+
+Built in Release mode using commit ec29b0c1f on branch master.
+
+
+---  Software Radio Systems EPC  ---
+
+Couldn't open , trying /root/.config/srsran/epc.conf
+Reading configuration file /root/.config/srsran/epc.conf...
+HSS Initialized.
+MME S11 Initialized
+MME GTP-C Initialized
+MME Initialized. MCC: 0xf001, MNC: 0xff01
+SPGW GTP-U Initialized.
+SPGW S11 Initialized.
+SP-GW Initialized.

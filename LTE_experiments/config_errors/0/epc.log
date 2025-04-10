@@ -1,0 +1,9 @@
+
+Built in Release mode using commit ec29b0c1f on branch master.
+
+
+---  Software Radio Systems EPC  ---
+
+Couldn't open , trying /root/.config/srsran/epc.conf
+Reading configuration file /root/.config/srsran/epc.conf...
+unrecognised option 'mme.identity'
