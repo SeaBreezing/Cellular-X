@@ -16,7 +16,7 @@ cd rag_experiments
 python save_to_index.py
 ```
 
-## Getting Stared
+## Getting Started
 To automatically build a cellular network as demo1, run the following commands on PC3. 
 ```
 cd LTE_experiment
