@@ -5,10 +5,10 @@
 ![](https://github.com/SeaBreezing/Cellular-X/blob/main/IMG/subsystem.png)
 ## Environment & Setup
 * We build a practical BS and an associated user equipment (UE) using two USRP X310. Each USRP’s host PC is powered by an AMD Ryzen 1950X processor and the Ubuntu 18.04 operating system.
-* Follow [USRP setup tutorial](https://github.com/SeaBreezing/Cellular-X/blob/main/USRP%20setup%20tutorial.md) to prepare your own USRP device on each hostPC from scratch.
-* Follow [SRSRAN 4G Installation Guide](https://docs.srsran.com/projects/4g/en/latest/general/source/1_installation.html#gen-installation) to prepare your SRSRAN environment.
-* To check your environment, run `srsran`, `srsenb` on hostPC1 and `srsue` on hostPC2. You will see `Network attach successful` as output if your settings are correct.
-* Take a third HostPC as a master control for the two hostPCs connecting USRP devices.
+* Prepare three hostPCs. PC1 is for BE building, PC2 is for UE building. PC3 is for master control to PC1 and PC2.
+* Follow [USRP setup tutorial](https://github.com/SeaBreezing/Cellular-X/blob/main/USRP%20setup%20tutorial.md) to prepare your own USRP device from scratch on PC1 and PC2.
+* Follow [SRSRAN 4G Installation Guide](https://docs.srsran.com/projects/4g/en/latest/general/source/1_installation.html#gen-installation) to prepare your SRSRAN environment on PC1 and PC2.
+* To check your environment, run `srsran`, `srsenb` on PC1 and `srsue` on PC2. You will see `Network attach successful` on PC2 as output if your settings are correct.
 ## Getting Stared
 
 
