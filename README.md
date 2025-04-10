@@ -35,5 +35,11 @@ python query.py
 ## Citation
 If this repository is useful for your research, please cite:
 ```
-
+@inproceedings{,
+  title={Demo: Cellular-X: An LLM-empowered Cellular Agent for Efficient Base Station Operations},
+  author={Wang, Liujianfu and Long, Xinyi and Du, Yuyang and Liu, Xiaoyan and Chen, Kexin and Liew, Soung Chang},
+  booktitle={},
+  year={2025},
+  organization={}
+}
 ```
