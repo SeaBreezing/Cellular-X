@@ -1,8 +1,8 @@
-import os
-import json
+import os, json
+import voice2text
 import openai
 openai.api_key = "your_api_key"
-openai.base_url="your_url"
+openai.base_url = "your_url"
 client = openai.OpenAI(
     api_key = "your_api_key",
     base_url = "your_url",
@@ -23,9 +23,9 @@ import tqdm
 import argparse
 
 parser = argparse.ArgumentParser(description='Parameters for query setup: K (top_k) and W (chunk size)')
-parser.add_argument('-k', type=int, help='top_k', required=True)
-parser.add_argument('-w', type=int, help='chunk size', required=True)
-parser.add_argument('-m', '--model', type=str, help='model for query', required=True)
+parser.add_argument('-k', type=int, help='top_k', default=4)
+parser.add_argument('-w', type=int, help='chunk size', default=1024)
+parser.add_argument('-m', '--model', type=str, help='model for query', default="gpt-4")
 args = parser.parse_args()
 
 W = args.w
@@ -42,13 +42,21 @@ def query_index(prompt: str, top_k: int = K):
     return results
 
 def query(question_idx: int, question_prompt: str, model) -> str:
-    prompt = "Select the correct option for the question in JSON format below:\n"
+    # prompt = "Select the correct option for the question in JSON format below:\n"
+    # prompt += question_prompt+'\n'
+    prompt = "Answer the question for the question below:\n"
     prompt += question_prompt+'\n'
     rag_results = query_index(prompt, K)
-    # prompt += "You are provided with related document information as follows:\n"
-    # for i, result in enumerate(rag_results):
-    #     prompt += f"Information {i+1}: "+result.text+"\n"
-    prompt += "Only answer the 'option_?' in plaintext without single quotation marks, where ? is the index of the option you choose. Do not add any additional explanation."
+    prompt += "You are provided with related document information as follows:\n"
+    for i, result in enumerate(rag_results):
+        prompt += f"Information {i+1}: "+result.text+"\n"
+    prompt += "Specify the parameters I need to configurate. Do not add any additional and abstract explanation. The response should not be longer than 50 tokens."
+    prompt += "let me know the article section which you use to generate questions from."
+    prompt += "Below is an example"
+    prompt += "question: What is the BS Tx power for UMa at 6GHz in large scale calibration?"
+    prompt += "answer: 49 dBm"
+    prompt += "explanation: As per Table 7.8-1 in the section provided, the BS Tx power for UMa at 6GHz is specified as 49 dBm."
+    prompt += "category: 7.8.1 Large scale calibration"
     response = client.chat.completions.create(
         model = model,
         messages = [{'role': 'user', 'content': prompt}]
@@ -57,7 +65,7 @@ def query(question_idx: int, question_prompt: str, model) -> str:
         os.mkdir("experiments")
     response = response.choices[0].message.content.strip()
     with open(f"experiments/answers_W{W}_K{K}_{model}.txt", "a+") as f:
-        f.write(f"question_{question_idx} answer: {response}\n")
+        f.write(f"【question_{question_idx}】{question_prompt}\n【answer】: {response}\n")
     return response
 
 def evaluate_questions(model):
@@ -67,28 +75,19 @@ def evaluate_questions(model):
     if os.path.exists(f"experiments/stats_W{W}_K{K}_{model}.txt"):
         os.system(f"rm experiments/stats_W{W}_K{K}_{model}.txt")
 
-    # Load the JSON file
-    with open("Q-small/Sampled_3GPP_TR_Questions.json", 'r') as file:
-        questions_data = json.load(file)
-    
+    question_text = [voice2text.v2text("record.mp3")]
+    print(f"question_text:{question_text}")
     # Initialize counters
     correct_counts = {"Easy": 0, "Intermediate": 0, "Hard": 0}
     total_counts = {"Easy": 0, "Intermediate": 0, "Hard": 0}
     
     qna_keys = ['question', 'option_1', 'option_2', 'option_3', 'option_4']
     # Iterate through each question
-    for question_idx, (question_id, question_info) in tqdm.tqdm(enumerate(questions_data.items())):
-        question_and_options = { k: v for k, v in question_info.items() if k in qna_keys}
-        question_and_options = str(question_and_options)
-        correct_answer = question_info['answer'].split(':')[0]  # Extract the answer text
-        difficulty = question_info['difficulty']
+    for question_idx, question_info in tqdm.tqdm(enumerate(question_text)):
         
-        returned_answer = query(question_idx, question_and_options, model=model)
-        is_correct = returned_answer.lower() == correct_answer.lower()
-        
-        total_counts[difficulty] += 1
-        if is_correct:
-            correct_counts[difficulty] += 1
+        returned_answer = query(question_idx, question_info, model=model)
+        print(returned_answer)
+        voice2text.t2voice(returned_answer, question_idx)
     
     # Print results
     print("Results:")
