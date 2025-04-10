@@ -57,8 +57,8 @@ def v2text(mp3_file, use_micro = False):
     if use_micro == True:
         recording()
     client = OpenAI(
-        api_key="sk-oSr5tYj0sRSGtlrcootbuH1rkjjbspyRq0c4uiLhpVyAZpx2",
-        base_url="https://api.xty.app/v1"
+        api_key="your_api_key",
+        base_url="your_url"
     )
     audio_file = open(mp3_file, "rb")
     transcript = client.audio.transcriptions.create(
@@ -72,8 +72,8 @@ def v2text(mp3_file, use_micro = False):
 
 def t2voice(text, answer_index=0):
     client = OpenAI(
-    api_key="sk-oSr5tYj0sRSGtlrcootbuH1rkjjbspyRq0c4uiLhpVyAZpx2",
-    base_url="https://api.xty.app/v1"
+    api_key="your_api_key",
+    base_url="your_url"
     )
     response = client.audio.speech.create(
                 model="tts-1",
