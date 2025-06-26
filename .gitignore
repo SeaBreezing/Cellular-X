@@ -1,0 +1,7 @@
+**__pycache__**
+LTE_experiments/config_errors/*
+LTE_experiments/config_errors_*
+LTE_experiments/parse_fail.json
+LTE_experiments/generated_LTE_config/*
+*.wav
+*.mp3

@@ -1,0 +1,8 @@
+【question_0】For the mobility evaluation parameters, what is the agreed value for the TimeToTrigger parameter?
+【answer】: Question: What is the agreed value for the TimeToTrigger parameter?
+
+Answer: 160 ms
+
+Explanation: As per Table A.2.1-1 in the provided section, the agreed value for the TimeToTrigger parameter is specified as 160 ms.
+
+Category: A.2.1 Mobility Parameters

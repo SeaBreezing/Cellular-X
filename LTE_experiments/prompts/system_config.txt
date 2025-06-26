@@ -1,0 +1,7 @@
+The system configuration is as follows:
+1. There are two bladeRF 2.0 micro xA4 devices which act as the RF device for ENB and UE respectively.
+2. The address of the machines acting as EPC/ENB is 172.16.77.242.
+3. The address of the macine acting as UE is 172.16.74.93.
+4. The FPGA image version of the bladeRF devices are 0.14.0.
+5. The experiment is conducted in the California, United States.
+6. The generated configurations will be put to /root/.config/srsran directory. Warnings about the configuration location can be ignored.
